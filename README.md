@@ -4,6 +4,17 @@ I'm an engineering student at **Télécom Paris (Institut Polytechnique de Paris
 
 I'm interested in **Artificial Intelligence, Machine Learning, Data Science, and Software Engineering**, particularly at the intersection of mathematical foundations and practical implementations.
 
+## 🚧 Currently building
+
+### [oarp — Observable Agentic RAG Platform](https://github.com/DaviCoelh0/oarp)
+
+**Python · LLM Agents · Docker · Information Retrieval** · *ongoing*
+
+A Python platform for building, evaluating and, eventually, optimizing tool-using LLM agents. Every run is bounded, traced and scored by an independent verifier, so claims about what an agent did can be checked.
+
+- **Coding environment:** the agent fixes Python bugs inside a network-isolated Docker sandbox. A separate verifier runs public and hidden tests, and deliberately wrong "decoy" fixes check that the tests catch plausible mistakes. First pilot runs use Claude Haiku 5.5.
+- **Retrieval environment (in progress):** a BM25 baseline with standard retrieval metrics on the BEIR SciFact benchmark, the starting point for studying how harness settings affect retrieval agents.
+
 ## 🚀 Selected projects
 
 ### [PICI — Partially Identifiable Causal Inference](https://github.com/c2d-usp/pici)
@@ -57,7 +68,7 @@ My work involved algorithmic experimentation, benchmarking against established d
 - **Languages:** Python, C++, C, Kotlin, TypeScript, SQL
 - **Machine Learning & Data Science:** PyTorch, scikit-learn, NumPy, Pandas, NLTK, spaCy
 - **Development & Tools:** Git/GitHub, Docker, Linux, PostgreSQL, Jupyter, React, Ktor
-- **Interests:** Deep Learning, Natural Language Processing, Causal Inference, Graph Machine Learning, Information Retrieval & RAG, AI Observability, and Software Engineering
+- **Interests:** Deep Learning, Natural Language Processing, Causal Inference, Graph Machine Learning, Information Retrieval & RAG, LLM Agents & Evaluation, AI Observability, and Software Engineering
 
 ## 📫 Let's connect!
 
