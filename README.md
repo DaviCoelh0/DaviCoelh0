@@ -4,16 +4,33 @@ I'm an engineering student at **Télécom Paris (Institut Polytechnique de Paris
 
 I'm interested in **Artificial Intelligence, Machine Learning, Data Science, and Software Engineering**, particularly at the intersection of mathematical foundations and practical implementations.
 
+
 ## 🚧 Currently building
 
 ### [oarp — Observable Agentic RAG Platform](https://github.com/DaviCoelh0/oarp)
 
-**Python · LLM Agents · Docker · Information Retrieval** · *ongoing*
+**Python · LangGraph · LLM Agents · Docker · Information Retrieval** · *ongoing*
 
-A Python platform for building, evaluating and, eventually, optimizing tool-using LLM agents. Every run is bounded, traced and scored by an independent verifier, so claims about what an agent did can be checked.
+A Python platform for **building, evaluating, and optimizing tool-using LLM agents**. I'm exploring a practical research question: **when is additional retrieval work worth its cost?**
 
-- **Coding environment:** the agent fixes Python bugs inside a network-isolated Docker sandbox. A separate verifier runs public and hidden tests, and deliberately wrong "decoy" fixes check that the tests catch plausible mistakes. First pilot runs use Claude Haiku 5.5.
-- **Retrieval environment (in progress):** a BM25 baseline with standard retrieval metrics on the BEIR SciFact benchmark, the starting point for studying how harness settings affect retrieval agents.
+The platform combines bounded agent execution, structured tracing, independent verification, and reproducible, cost-aware experiments.
+
+- **Agent infrastructure:** Built a provider-neutral harness with configurable tool budgets, execution tracing, cost accounting, and **609 passing tests**.
+- **Coding environment:** Implemented a Python bug-fixing agent with network-isolated Docker execution, editable-file restrictions, and independent public/hidden-test verification.
+- **Retrieval environment:** Developed a **LangGraph search agent** that decides whether and what to search within harness-enforced limits, alongside BM25 and LLM reranking baselines.
+- **Harness optimization:** Evaluated **1,089 routing configurations** offline, with the model fixed, to determine when to use BM25, reranking, or agentic search.
+
+**Results on 300 held-out BEIR SciFact queries (nDCG@10):**
+
+| BM25 | LLM reranking | Search agent | Selected routing policy |
+|:---:|:---:|:---:|:---:|
+| 0.662 | 0.757 | **0.791** | **0.786** |
+
+The development-selected policy **beat LLM reranking by +0.030 nDCG@10** (95% CI [+0.014, +0.048]) on held-out queries, at **49% of the full agent's estimated API cost**.
+
+The policy's pre-specified non-inferiority margin against the full agent was **not established**. Results are from one benchmark and one model (Claude Haiku 5.5); configuration search is bounded and offline, not autonomous self-improvement.
+
+[**Explore the project →**](https://github.com/DaviCoelh0/oarp) · [**Read the held-out evaluation →**](https://github.com/DaviCoelh0/oarp/blob/main/experiments/retrieval_heldout/README.md)
 
 ## 🚀 Selected projects
 
